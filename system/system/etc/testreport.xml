@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <config config_name="network" config_value="WCDMA;CDMA;TDD-LTE;GSM;TD-SCDMA;LTEFDD;"/> 
+    <config config_name="sim_num" config_value="1"/>
+</resources>

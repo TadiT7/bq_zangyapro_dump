@@ -1,0 +1,3 @@
+on property:sys.boot_completed=1
+    setprop persist.vendor.dpm.nsrm 3
+    setprop persist.vendor.dpm.feature 7

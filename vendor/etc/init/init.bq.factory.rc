@@ -1,0 +1,8 @@
+service initusb /vendor/bin/sh /vendor/etc/init.bq.usb.sh
+    class late_start
+    user system
+    disabled
+    oneshot
+
+on post-fs-data
+    start initusb

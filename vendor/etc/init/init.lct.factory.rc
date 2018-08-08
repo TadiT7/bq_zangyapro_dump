@@ -1,0 +1,37 @@
+# ftmd start with powerup will cause CTS issue
+on property:sys.ftmd=1
+    start ftmd
+
+service ptt_socket_app /system/bin/ptt_socket_app -d
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+
+service boot-check /vendor/bin/sh /vendor/bin/init.lct.bootcheck.sh
+    class main
+    user root
+    oneshot
+
+service boot-checkend /vendor/bin/sh /vendor/bin/init.lct.bootcheckend.sh
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start boot-checkend
+
+service set_sn /system/bin/adjust_serialno setsn
+    disable
+    oneshot
+
+on property:sys.sn_set=1
+    start set_sn
+
+on property:persist.sys.runin=enable
+    write /sys/class/power_supply/battery/device/BatteryTestStatus 1
+
+on property:persist.sys.runin=disable
+    write /sys/class/power_supply/battery/device/BatteryTestStatus 0

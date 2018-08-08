@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <config config_name="tppath" config_value="/proc/tp_info"/> 
+    <config config_name="lcdpath" config_value="/sys/class/graphics/fb0/msm_fb_panel_info"/>
+    <config config_name="sublcdpath" config_value="/sys/class/graphics/fb1/msm_fb_panel_info"/>
+    <config config_name="emmcfile" config_value="/sys/bus/mmc/devices/mmc0:0001/name"/>
+    <config config_name="fppath" config_value="/proc/fp_info"/>
+    <!-- <config config_name="efuse" config_value="/proc/fuse_state"/> -->
+    <config config_name="platformver" config_value="/sys/devices/system/soc/soc0/platform_version"/>
+    <config config_name="batterytype" config_value="/sys/class/power_supply/bms/uevent"/>
+    <config config_name="barcode" config_value="barcode"/>
+</resources>
